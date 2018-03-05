@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>PUZZLE GAME
+</title>
+</head>
+<body onload="animate()">
+<button type="button" onClick="animate()">START PUZZLE</button>
+<canvas id="myCanvas" width="1500" height="700" style="border:1px solid #d3d3d3;">
+<script>
+
+var canvas =document.getElementById("myCanvas");
+var cdx=canvas.getContext("2d");
+var img1=new Image();
+var img2=new Image();
+var img3=new Image();
+var img4=new Image();
+var img5=new Image();
+var img6=new Image();
+var img7=new Image();
+var img8=new Image();
+var img9=new Image();
+var pos=0;
+
+function animate(){
+setInterval(init,200);
+}
+
+function init(){
+
+img1.src="topleft.png";
+img1.onload=function(){
+cdx.drawImage(img1,0,0);
+}
+img2.src="topmiddle.png";
+img2.onload=function(){
+cdx.drawImage(img2,200,0);
+}
+img3.src="topright.png";
+img3.onload=function(){
+cdx.drawImage(img3,400,0);
+}
+img4.src="middleleft.png";
+img4.onload=function(){
+cdx.drawImage(img4,0,200);
+}
+img5.src="middlemiddle.png";
+img5.onload=function(){
+cdx.drawImage(img5,200,200);
+}
+img6.src="middleright.png";
+img6.onload=function(){
+cdx.drawImage(img6,400,200);
+}
+img7.src="bottomleft.png";
+img7.onload=function(){
+cdx.drawImage(img7,0,400);
+}
+img8.src="bottommiddle.png";
+img8.onload=function(){
+cdx.drawImage(img8,200,400);
+}
+img9.src="bottomright.png";
+img9.onload=function(){
+cdx.drawImage(img9,400,400);
+}
+
+}
+
+
+</script>
+</body>
+</html>

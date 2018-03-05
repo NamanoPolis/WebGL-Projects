@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="1500" height="700" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+
+
+
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.fillStyle="#0000ff";
+ctx.beginPath();
+ctx.moveTo(0,0);
+ctx.rect(0,0,1500,700);
+ctx.stroke;
+ctx.fill();
+
+ctx.fillStyle="#ffffff";
+var i=0;
+while(i<34){
+var x=Math.random()*1450;
+var y=Math.random()*600;
+ctx.beginPath();
+ctx.moveTo(x,y);
+ctx.arc(x,y,3,0,2*Math.PI,true);
+ctx.stroke();
+ctx.fill();
+i++;
+}
+
+ctx.fillStyle="#ffff00";
+ctx.beginPath();
+ctx.moveTo(300,700);
+ctx.bezierCurveTo(300,700,600,10,900,700);
+ctx.stroke;
+ctx.fill();
+ctx.fillStyle="#00ff00";
+ctx.beginPath();
+ctx.moveTo(100,700);
+ctx.bezierCurveTo(100,700,300,200,500,500);
+ctx.bezierCurveTo(500,500,700,700,900,500);
+ctx.bezierCurveTo(900,500,1100,200,1300,700);
+ctx.stroke();
+ctx.fill();
+var x=-100;
+ctx.fillStyle="rgb(0,153,0)";
+ctx.beginPath();
+ctx.moveTo(100+x,700);
+ctx.bezierCurveTo(100+x,700,300+x,200,500+x,500);
+ctx.bezierCurveTo(500+x,500,700+x,700,900+x,500);
+ctx.bezierCurveTo(900+x,500,1100+x,200,1300+x,700);
+ctx.stroke();
+ctx.fill();
+
+
+</script> 
+
+</body>
+</html>

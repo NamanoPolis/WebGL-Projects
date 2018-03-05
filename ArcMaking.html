@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="700" height="700" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<button onclick="animate();">ANIMATE</button>
+
+<script>
+var k=5;
+funtion animate()
+{
+setInterval(face(),3000);
+}
+
+function face()
+{
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+if(k>100){
+k=0;}
+else
+{
+k=k+5;
+}
+
+ctx.beginPath();
+ctx.arc(350,350,100+k, 0, 2 * Math.PI);
+ctx.stroke();
+
+
+}
+
+</script> 
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>CAR
+</title>
+</head>
+<body onload="animate()">
+<canvas id="myCanvas" width="1500" height="700" style="border:1px solid #d3d3d3;">
+<script>
+var canvas =document.getElementById("myCanvas");
+var cdx=canvas.getContext("2d");
+var img=new Image();
+var img2=new Image();
+var x=0;
+var y=Math.random()*700;
+function animate(){
+setInterval(init,200);
+}
+
+function init(){
+cdx.clearRect(0,0,1500,700);
+img.src="download.png";
+img2.src="girl.png";
+
+img.onload=function(){
+if(x>=1300)
+x=0;
+else
+x=x+100;
+cdx.drawImage(img,x,200);
+}
+
+img2.onload=function(){
+
+cdx.drawImage(img2,1400,parseInt(y));
+}
+}
+</script>
+</body>
+</html>

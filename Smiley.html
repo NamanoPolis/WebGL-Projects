@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sarthak</title>
+</head>
+<body onload="animate()">
+
+<canvas id="myCanvas" width="1500" height="700" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+
+<input type="range" min="100" max="1000" step="10" onChange="updtime(this.value)">
+
+
+<script>
+var t=300;
+function animate()
+{
+setInterval(initfunc,t);
+}
+
+function updtime(z)
+{
+t=1000-z;
+animate();
+}
+
+function initfunc()
+{
+var speed;
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+var wid=Math.random()*1500;
+var hei=Math.random()*700;
+ctx.clearRect(0,0,1500,700);
+ctx.beginPath();
+ctx.fillStyle="#FFFF00";
+ctx.lineWidth="3";
+ctx.arc(parseInt(wid),parseInt(hei),100,0,2*Math.PI,true);
+ctx.fill();
+ctx.moveTo(parseInt(wid)-40,parseInt(hei)-50);
+//ctx.fillStyle="#FFFFFF";
+ctx.arc(parseInt(wid)-50,parseInt(hei)-50,10,0,2*Math.PI,true);
+ctx.fill();
+ctx.moveTo(parseInt(wid)+60,parseInt(hei)-50);
+//ctx.fillStyle="#FFFFFF";
+ctx.arc(parseInt(wid)+50,parseInt(hei)-50,10,0,2*Math.PI,true);
+ctx.fill();
+ctx.moveTo(parseInt(wid)+30,parseInt(hei)+50);
+//ctx.fillStyle="#FFFFFF";
+ctx.arc(parseInt(wid),parseInt(hei)+50,30,0,2*Math.PI,true);
+ctx.fill();
+ctx.stroke();
+}
+</script> 
+
+</body>
+</html>

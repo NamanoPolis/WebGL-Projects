@@ -1,0 +1,37 @@
+<html>
+<head>
+<style>
+#ver{
+height 20px;
+transform:rotate(90deg);
+</style>
+<script type="text/javascript">
+function initFunc()
+{
+var canvas=document.getElementById("myCanvas");
+var cdx=canvas.getContext("2d");
+var a=document.getElementById("test").value;
+var b=document.getElementById("ver").value;
+cdx.beginPath();
+cdx.arc(a,b,240,0,2*Math.PI);
+cdx.stroke();
+var cdt=canvas.getContext("2d");
+cdt.beginPath();
+cdt.arc(Number(a)-95,Number(b)-90,20,0,2*Math.PI);
+cdt.stroke();
+var cdm=canvas.getContext("2d");
+cdm.beginPath();
+cdm.arc(Number(a)+100,Number(b)-90,20,0,2*Math.PI);
+cdm.stroke();
+var cdv=canvas.getContext("2d");
+cdv.beginPath();
+cdv.arc(Number(a),Number(b)+40,100,0,Math.PI);
+cdv.stroke();
+}</script>
+</head>
+<body onload="initFunc()">
+<input id="test" type="range" min="100" max="500" step="50"/> 
+<input id="ver" type="range" min="50" max="400" step="30"/> <br/>
+<canvas id="myCanvas" width="800" height="600">
+</body>
+</html>
